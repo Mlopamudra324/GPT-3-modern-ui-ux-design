@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background: var(--color-bg);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+    color: unset;
+    /* this color:unset property in CSS resets an element's color to its "inherited" value or its initial value based on the context. It essentially removes any explicit color setting applied to that element and returns it to the default behavior */
+    text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* for gradiant we use ANGRYTOOLS.COM/GRADIANT */
+.gradient__bg {
+    background: radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
 }
 
-.App-link {
-  color: #61dafb;
+/* here we use gradient text */
+.gradient__text {
+    background: var(--gradient-text);
+    background-clip: text;
+    /* allows the background of an element to be "clipped" or confined within the text content, meaning the background will only show through the text, not outside of it. This is often used to create cool effects like gradient-filled text. */
+    -webkit-background-clip: text;
+    /* This property specifies that the background of an element should be "clipped" or confined to the boundaries of the text, allowing the background (such as a gradient or image) to be visible through the text. The -webkit- prefix is needed because the feature originally required a vendor prefix for browser support. */
+
+    -webkit-text-fill-color: transparent;
+    /* CSS property is a WebKit-specific property used to make the text transparent, which allows background effects like gradients to show through the text itself. This property is essential when you are using -webkit-background-clip: text; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.section__padding {
+    padding: 4rem 5rem;
+    /* padding 4rem top and bottom and 6rem from left and right */
+}
+
+.section__margin {
+    margin: 4rem 6rem;
+}
+
+/* for custom animation here we use ANIMISTA.NET */
+.scale-up-center {
+    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+/* keyframes */
+@-webkit-keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+
+@media screen and (max-width:700px) {
+    .section__padding {
+        padding: 4rem
+    }
+
+    .section__margin {
+        margin: 4rem
+    }
+}
+
+@media screen and (max-width:550px) {
+    .section__padding {
+        padding: 4rem 2rem
+    }
+
+    .section__margin {
+        margin: 4rem 2rem
+    }
 }
